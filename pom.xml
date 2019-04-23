@@ -4,7 +4,7 @@
   <groupId>com.proartz</groupId>
   <artifactId>CoreJava</artifactId>
   <packaging>jar</packaging>
-  <version>1.16-SNAPSHOT</version>
+  <version>1.16</version>
   <build>
     <plugins>
       <plugin>
