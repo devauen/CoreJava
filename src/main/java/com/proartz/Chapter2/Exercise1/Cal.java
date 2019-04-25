@@ -3,6 +3,7 @@ package com.proartz.Chapter2.Exercise1;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
+
 public class Cal {
     public static void main(String[] args) {
         LocalDate date = LocalDate.now().withDayOfMonth(1);
