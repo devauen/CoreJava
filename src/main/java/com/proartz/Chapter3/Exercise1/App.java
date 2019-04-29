@@ -1,6 +1,10 @@
 package com.proartz.Chapter3.Exercise1;
 
+import java.util.Random;
+
 public class App {
+
+    private static Random random = new Random();
 
     public static void main(String[] args) {
 
@@ -13,7 +17,9 @@ public class App {
     public static Employee[] createEmployers(int n) {
         Employee[] employees = new Employee[n];
         for(int i = 0; i < employees.length; i++) {
-            employees[i] = new Employee("Employee_" + i, i*1000);
+            employees[i] = new Employee(
+                    "Employee_" + i,
+                    random.nextInt(10)*1000);
         }
 
         return employees;
