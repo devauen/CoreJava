@@ -11,6 +11,11 @@ public class App {
             System.out.printf("%d ", iterator.next());
         }
         System.out.println();
+
+        /*
+        Możliwość definiowania metod domyślnych w interfejsie pozwala na zgodność,
+        z aplikacjami napisanymi i skompilowanymi w starszej wersji javy.
+         */
     }
 
 }
