@@ -11,7 +11,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        Employee[] employees = createEmployers(10);
+        Employee[] employees = createEmployees(10);
         printList(employees);
         Employee richestEmployee = (Employee)largest(employees);
         System.out.printf("Largest salary: %s%n", richestEmployee.getName());

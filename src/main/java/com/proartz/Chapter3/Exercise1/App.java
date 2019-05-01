@@ -8,13 +8,13 @@ public class App {
 
     public static void main(String[] args) {
 
-        Employee[] employees = createEmployers(10);
+        Employee[] employees = createEmployees(10);
         printList(employees);
         System.out.printf("Average of employees: %.2f%n", average(employees));
 
     }
 
-    public static Employee[] createEmployers(int n) {
+    public static Employee[] createEmployees(int n) {
         Employee[] employees = new Employee[n];
         for(int i = 0; i < employees.length; i++) {
             employees[i] = new Employee(
