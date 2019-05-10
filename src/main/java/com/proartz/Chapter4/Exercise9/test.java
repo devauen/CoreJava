@@ -8,8 +8,7 @@ public class test {
     private int number = 0;
     public static String name = "blabla";
 
-    @Override
-    public String toString(){
+    public String showClass(){
         StringBuilder builder = new StringBuilder();
 
         try {
@@ -31,6 +30,30 @@ public class test {
             }
 
             builder.append("}\n");
+
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
+
+        return builder.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        try {
+
+            builder.append(getClass().getSimpleName());
+
+            // add all fields info
+            for (Field f : getClass().getDeclaredFields()) {
+                f.setAccessible(true);
+                builder.append(
+                        "[" +
+                        f.getName() + "=" +
+                        f.get(this) + "]");
+            }
 
         } catch (IllegalAccessException ex) {
             ex.printStackTrace();
