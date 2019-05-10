@@ -55,7 +55,7 @@ public class test {
                         f.get(this) + "]");
             }
 
-        } catch (IllegalAccessException ex) {
+        } catch (ReflectiveOperationException ex) {
             ex.printStackTrace();
         }
 
