@@ -1,5 +1,6 @@
 package com.proartz.Chapter5.Exercise5;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Paths;
@@ -14,18 +15,26 @@ public class App {
     }
 
     public static void copyFile(String input, String output) {
-        try{
-
+        try {
             Scanner in = new Scanner(Paths.get(input));
-            PrintWriter out = new PrintWriter(output);
-
-            while(in.hasNextLine()) {
-                out.println(in.nextLine());
+            try {
+                PrintWriter out = new PrintWriter(output);
+                try {
+                    while (in.hasNextLine()) {
+                        out.println(in.nextLine());
+                    }
+                } catch (Exception ex) {
+                    System.out.println("Problem with reading nextLine");
+                }
+                try {
+                    in.close();
+                    out.close();
+                } catch (Exception ex) {
+                    System.out.println("Problem with closing resources");
+                }
+            } catch (FileNotFoundException ex) {
+                System.out.println("File " + output + " not found");
             }
-
-            in.close();
-            out.close();
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
