@@ -9,13 +9,13 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) throws IOException, InputMismatchException {
+    public static void main(String[] args) throws IOException {
 
         readValues("numbers.txt").forEach(System.out::println);
 
     }
 
-    public static ArrayList<Double> readValues(String filename) throws IOException, InputMismatchException {
+    public static ArrayList<Double> readValues(String filename) throws IOException {
 
         Scanner in = new Scanner(Paths.get(filename), "UTF-8");
         ArrayList<Double> doubles = new ArrayList<>();
