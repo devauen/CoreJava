@@ -14,24 +14,17 @@ import org.junit.Test;
 public class TestMinMaxComp {
 
     List<Integer> elements;
-    Comparator<Integer> comp;
 
     @Before
     public void initialize() {
         elements = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        comp = new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1.compareTo(o2);
-            }
-        };
     }
 
     @Test
     public void testMinMaxList() {
 
-        assertEquals(Integer.valueOf(1), min(elements, comp));
-        assertEquals(Integer.valueOf(5), max(elements, comp));
+        assertEquals(Integer.valueOf(1), min(elements, Comparator.naturalOrder()));
+        assertEquals(Integer.valueOf(5), max(elements, Comparator.naturalOrder()));
 
     }
 
@@ -39,7 +32,7 @@ public class TestMinMaxComp {
     public void testMinMaxComp() {
         List<Integer> result = new ArrayList<>();
 
-        minmax(elements, comp , result);
+        minmax(elements, Comparator.naturalOrder() , result);
         assertNotNull(result.get(0));
         assertEquals(Integer.valueOf(1), result.get(0));
         assertNotNull(result.get(1));
