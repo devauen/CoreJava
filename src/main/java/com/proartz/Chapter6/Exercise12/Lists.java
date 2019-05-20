@@ -6,24 +6,24 @@ import java.util.function.Consumer;
 
 public class Lists {
 
-    public static <T extends Comparable<? super T>> void minmax(List<T> elements, Comparator<? super T> comp,
+    public static <T> void minmax(List<T> elements, Comparator<? super T> comp,
                                   List<? super T> result) {
-        result.add(min(elements));
-        result.add(max(elements));
+        result.add(min(elements, comp));
+        result.add(max(elements, comp));
     }
 
-    public static <T extends Comparable<? super T>> T min(List<T> list) {
+    public static <T> T min(List<T> list, Comparator<? super T> comp) {
         T min = list.get(0);
         for(T element : list) {
-            min = (min.compareTo(element) < 0) ? min : element;
+            min = (comp.compare(min, element) < 0) ? min : element;
         }
         return min;
     }
 
-    public static <T extends Comparable<? super T>> T max(List<T> list) {
+    public static <T> T max(List<T> list, Comparator<? super T> comp) {
         T max = list.get(0);
         for(T element : list) {
-            max = (max.compareTo(element) > 0) ? max : element;
+            max = (comp.compare(max, element) > 0) ? max : element;
         }
         return max;
     }
