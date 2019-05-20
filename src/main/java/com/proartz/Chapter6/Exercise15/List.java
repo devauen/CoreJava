@@ -5,8 +5,8 @@ import java.util.function.Function;
 
 public class List {
 
-    public static <T> ArrayList<T> map(ArrayList<T> array, Function<T, T> function) {
-        ArrayList<T> result = new ArrayList<>();
+    public static <T, R> ArrayList<R> map(ArrayList<T> array, Function<T, R> function) {
+        ArrayList<R> result = new ArrayList<>();
         for (T element : array) {
             result.add(function.apply(element));
         }
