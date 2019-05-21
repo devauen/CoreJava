@@ -8,16 +8,14 @@ public class App {
     public static void main(String[] args) {
 
         ArrayList<SoCloseable> elements = new ArrayList<>();
-        for(int i = 4; i < 10; i++) {
+        for(int i = 0; i < 5; i++) {
             elements.add(new ThrowingCloseable());
-        }
-        for(int i = 5; i < 10; i++) {
             elements.add(new SoCloseable());
         }
 
         try{
             closeAll(elements);
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             showAllCauses(ex);
         }
 

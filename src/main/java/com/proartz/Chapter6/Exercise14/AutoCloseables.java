@@ -4,21 +4,16 @@ import java.util.ArrayList;
 
 public class AutoCloseables {
 
-    public static <T extends AutoCloseable> void closeAll(ArrayList<T> elems) throws Exception{
+    public static <T extends AutoCloseable> void closeAll(ArrayList<T> elems) {
 
         int i = 0;
-        Exception exception = null;
+        RuntimeException exception = null;
 
         for(T elem : elems) {
             try {
                 elem.close();
             } catch (Exception ex) {
-                if(exception == null) {
-                    exception = ex;
-                } else {
-                    ex.initCause(exception);
-                    exception = ex;
-                }
+                exception = new RuntimeException(ex.getMessage(), exception);
             }
         }
         if(exception != null) {
