@@ -4,9 +4,13 @@
   <groupId>com.proartz</groupId>
   <artifactId>CoreJava</artifactId>
   <packaging>jar</packaging>
-  <version>6.20</version>
+  <version>6.21-SNAPSHOT</version>
+  <name>CoreJava</name>
+  <url>http://maven.apache.org</url>
+
   <build>
     <plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -35,8 +39,6 @@
 
     </plugins>
   </build>
-  <name>CoreJava</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,12 +50,6 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.opencsv</groupId>
-      <artifactId>opencsv</artifactId>
-      <version>4.5</version>
     </dependency>
 
   </dependencies>
