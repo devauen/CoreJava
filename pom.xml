@@ -4,7 +4,7 @@
   <groupId>com.proartz</groupId>
   <artifactId>CoreJava</artifactId>
   <packaging>jar</packaging>
-  <version>6.22</version>
+  <version>6.23-SNAPSHOT</version>
   <name>CoreJava</name>
   <url>http://maven.apache.org</url>
 
