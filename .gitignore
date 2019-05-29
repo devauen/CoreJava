@@ -4,3 +4,6 @@ target/
 *.iml
 deploy
 packaged.yaml
+*.txt
+*.log
+*.html
